@@ -6,15 +6,14 @@ import time
 import shutil
 import sys
 
-# ================= 必须配置区域 =================
+# ================= 必须配置区域 (Configuration) =================
 
-# 1. 共享目录根路径 (用户不可见)
-SHARE_ROOT = r"\\192.168.5.5\Rustdesk"
+# 1. 共享目录根路径 / Shared Directory
+# 请修改为你实际的内网共享路径
+SHARE_ROOT = r"\\YOUR_FILE_SERVER\Rustdesk_Share"
 
 # 2. 具体文件路径
-# 假设安装包名为 rustdesk.exe，如果名字不同请修改
 NETWORK_INSTALLER_PATH = os.path.join(SHARE_ROOT, "rustdesk.exe")
-# 登记信息的文件名
 CSV_PATH = os.path.join(SHARE_ROOT, "RustDesk_Client_List.csv")
 
 # 3. 本地临时路径
@@ -23,13 +22,13 @@ LOCAL_TEMP_PATH = os.path.join(os.environ["TEMP"], "rd_setup.exe")
 # 4. RustDesk 主程序路径
 RUSTDESK_EXE = r"C:\Program Files\RustDesk\rustdesk.exe"
 
-# 5. 自建服务器配置
-# 【重要】请将 '你的Key字符串' 替换为你服务器的真实 Key
-SERVER_IP = "192.168.1.253"
-SERVER_KEY = "JnpD2XMLqoeFp0iL+uV59DLBN14+Gw66fu3Zfjnjs+Y=" 
+# 5. 自建服务器配置 / Self-hosted Server Config
+# 【重要】请填入你的公钥 / Please fill in your public key
+SERVER_IP = "YOUR_SERVER_IP_OR_DOMAIN"
+SERVER_KEY = "YOUR_PUBLIC_KEY_HERE" 
 CONFIG_STRING = f"host={SERVER_IP},key={SERVER_KEY}"
 
-# ===============================================
+# ==============================================================
 
 def run_command(command):
     """运行系统命令并返回输出"""
