@@ -148,7 +148,7 @@ def write_to_csv(hostname, ip, rustdesk_id):
     return False
 
 def main():
-    print("=== 亚世光电 信息办 RustDesk 部署工具 By 冯工 ===")
+    print("=== RustDesk 部署工具 By 加勒比海盗 ===")
     print("初始化中...")
     
     # 1. 安装
